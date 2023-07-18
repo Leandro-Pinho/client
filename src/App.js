@@ -1,15 +1,42 @@
-import { createBrowserRouter, RouterProvider, Route } from 'react-router-dom'
+import { createBrowserRouter, RouterProvider, Route, Outlet } from 'react-router-dom'
 import Register from './pages/Register';
 import Login from './pages/Login';
 import Write from './pages/Write';
 import Home from './pages/Home';
 import Single from './pages/Single';
+import NavBar from './components/NavBar';
+import Footer from './components/Footer';
+
+// layout da pagina
+const Layout = () => {
+  return (
+    <>
+      <NavBar />
+      <Outlet />
+      <Footer />
+    </>
+  );
+}
 
 // routes
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <div>this is Home!</div>,
+    element: <Layout />,
+    children: [
+      {
+        path: "/",
+        element: <Home />
+      },
+      {
+        path: "/post/:id",
+        element: <Single />
+      },
+      {
+        path: "/write",
+        element: <Write />
+      },
+    ]
   },
   {
     path: "/register",
@@ -19,26 +46,17 @@ const router = createBrowserRouter([
     path: "/login",
     element: <Login />,
   },
-  // {
-  //   path: "/write",
-  //   element: <Write />,
-  // },
-  // {
-  //   path: "/home",
-  //   element: <Home />,
-  // },
-  // {
-  //   path: "/single",
-  //   element: <Single />,
-  // },
 ]);
 
 function App() {
   return (
-    <div>
-      <RouterProvider router={router} />
+    <div className='app'>
+      <div className='container'>
+        <RouterProvider router={router} />
+      </div>
     </div>
   );
 }
+
 
 export default App;
