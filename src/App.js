@@ -6,6 +6,7 @@ import Home from './pages/Home';
 import Single from './pages/Single';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
+import './style.scss'
 
 // layout da pagina
 const Layout = () => {
