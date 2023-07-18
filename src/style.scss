@@ -1,7 +1,11 @@
 $ligthGreen: #b9e7e7;
 
 .app {
+    display: flex;
+    justify-content: center;
+
     .container {
+        width: 1024px;
 
         // LOGIN & REGISTER
         .auth {
@@ -52,6 +56,60 @@ $ligthGreen: #b9e7e7;
             span {
                 font-size: 12px;
                 text-align: center;
+            }
+        }
+
+        .link {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        // NAVBAR 
+        .navbar {
+            .container {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px 0;
+
+                .logo {
+                    img {
+                        width: 80px;
+                    }
+                }
+
+                .links {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                }
+
+                h6 {
+                    font-size: 16px;
+                    font-weight: 300;
+                }
+
+                span {
+                    cursor: pointer;
+                }
+
+                .write {
+                    background-color: $ligthGreen;
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-weight: 300;
+                    border: 1px solid #ffffff;
+
+                    &:hover {
+                        color: teal;
+                        background-color: #ffffff;
+                        border: 1px solid teal;
+                    }
+                }
             }
         }
     }
