@@ -74,7 +74,7 @@ $ligthGreen: #b9e7e7;
 
                 .logo {
                     img {
-                        width: 80px;
+                        width: 120px;
                     }
                 }
 
@@ -110,6 +110,25 @@ $ligthGreen: #b9e7e7;
                         border: 1px solid teal;
                     }
                 }
+            }
+        }
+
+        // FOOTER
+        footer {
+            margin-top: 100px;
+            padding: 20px;
+            background-color: $ligthGreen;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 16px;
+
+            img {
+                width: 80px;
+                padding: 5px;
+                background-color: #ffffff;
+                border: none;
+                border-radius: 5px;
             }
         }
     }
