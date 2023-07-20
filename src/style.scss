@@ -295,9 +295,55 @@ $ligthGreen: #b9e7e7;
 
             .menu {
                 flex: 2;
+                display: flex;
+                flex-direction: column;
+                gap: 25px;
+
+                h1 {
+                    margin: 0;
+                    padding: 0;
+                    font-size: 20px;
+                    color: #555;
+                }
+
+                .post {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+
+                    img {
+                        width: 100%;
+                        height: 200px;
+                        object-fit: cover;
+                    }
+
+                    h2 {
+                        color: #555;
+                    }
+
+                    button {
+                        width: max-content;
+                        padding: 10px 20px;
+                        border: none;
+                        cursor: pointer;
+                        background-color: #ffffff;
+                        border: 1px solid teal;
+                        color: teal;
+
+                        &:hover {
+                            border: 1px solid #ffffff;
+                            background-color: $ligthGreen;
+                            color: black;
+
+                            transition: 0.2s;
+                        }
+                    }
+                }
             }
         }
 
+        // WRITE
 
+        .write {}
     }
 }
