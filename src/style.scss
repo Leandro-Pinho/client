@@ -166,7 +166,7 @@ $ligthGreen: #b9e7e7;
                         img {
                             width: 100%;
                             max-height: 400px;
-                            object-fit: contain;
+                            object-fit: cover;
                         }
                     }
 
@@ -204,6 +204,97 @@ $ligthGreen: #b9e7e7;
                         }
                     }
                 }
+            }
+        }
+
+        // SINGLE
+        .single {
+            display: flex;
+            gap: 50px;
+
+            .content {
+                flex: 5;
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+
+                img {
+                    width: 100%;
+                    height: 300px;
+                    object-fit: cover;
+                }
+
+                .user {
+                    display: flex;
+                    align-items: center;
+                    column-gap: 10px;
+                    font-size: 14px;
+
+                    img {
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 50%;
+                        object-fit: cover;
+                    }
+
+                    span {
+                        font-weight: bold;
+                    }
+
+                    p {
+                        margin: 0;
+                        padding: 0;
+                    }
+
+                    .edit {
+                        display: flex;
+                        gap: 5px;
+                        cursor: pointer;
+
+                        .iconEdit {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-size: 20px;
+                            width: 40px;
+                            height: 40px;
+                            border: none;
+                            border-radius: 50%;
+                            background-color: teal;
+                            color: #ffffff;
+                        }
+
+                        .iconDel {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-size: 20px;
+                            width: 40px;
+                            height: 40px;
+                            border: none;
+                            border-radius: 50%;
+                            background-color: orangered;
+                            color: #ffffff;
+                        }
+
+
+                    }
+
+                }
+
+                h1 {
+                    font-size: 42px;
+                    color: #333;
+                }
+
+                p {
+                    text-align: justify;
+                    line-height: 25px;
+                }
+            }
+
+            .menu {
+                flex: 2;
             }
         }
 
