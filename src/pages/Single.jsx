@@ -58,9 +58,9 @@ const Single = () => {
                   <PiPencilLine />
                 </div>
               </Link>
-              <Link to={`/write?edit=2`} >
+              <Link onClick={handleDelete}>
                 <div className="iconDel">
-                  <FaTrash onClick={handleDelete} />
+                  <FaTrash  />
                 </div>
               </Link>
             </div>
