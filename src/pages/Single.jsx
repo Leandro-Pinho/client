@@ -45,6 +45,7 @@ const Single = () => {
     <div className='single'>
       <div className="content">
         <img src={post?.img} alt='' />
+
         <div className="user">
           {post.userImg && <img src={post.userImg} alt="" />}
           <div className="info">
@@ -60,18 +61,21 @@ const Single = () => {
               </Link>
               <Link onClick={handleDelete}>
                 <div className="iconDel">
-                  <FaTrash  />
+                  <FaTrash />
                 </div>
               </Link>
             </div>
           }
         </div>
+
         <div>
           <h1>{post.title}</h1>
           <p>{post.desc}</p>
         </div>
+
       </div>
-      <Menu />
+
+      <Menu cat={post.cat} />
     </div>
   )
 }
