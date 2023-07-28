@@ -3,7 +3,7 @@ import moment from 'moment';
 import React, { useState } from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const Write = () => {
 
@@ -12,6 +12,8 @@ const Write = () => {
   const [title, setTitle] = useState(state?.title || '');
   const [file, setFile] = useState(null);
   const [cat, setCat] = useState(state?.cat || '');
+
+  const navigate = useNavigate()
 
   const upload = async () => {
     try {
@@ -26,7 +28,7 @@ const Write = () => {
 
   const handleClick = async (e) => {
     e.preventDefault()
-    const ImgUrl = upload()
+    const ImgUrl = await upload()
 
     try {
       state
@@ -43,6 +45,7 @@ const Write = () => {
           img: file ? ImgUrl : "",
           date: moment(Date.now()).format("YYYY-MM-DD HH:mm:ss")
         });
+      navigate("/")
     } catch (err) {
       console.log(err);
     }

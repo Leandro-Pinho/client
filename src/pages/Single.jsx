@@ -6,6 +6,7 @@ import { AuthContext } from '../context/authContext'
 import Menu from '../components/Menu';
 import axios from 'axios';
 import moment from 'moment';
+import DOMPurify from "dompurify";
 
 const Single = () => {
 
@@ -41,10 +42,15 @@ const Single = () => {
     }
   }
 
+  const getText = (html) =>{
+    const doc = new DOMParser().parseFromString(html, "text/html")
+    return doc.body.textContent
+  }
+
   return (
     <div className='single'>
       <div className="content">
-        <img src={post?.img} alt='' />
+        <img src={`../upload/${post?.img}`} alt='' />
 
         <div className="user">
           {post.userImg && <img src={post.userImg} alt="" />}
@@ -70,7 +76,11 @@ const Single = () => {
 
         <div>
           <h1>{post.title}</h1>
-          <p>{post.desc}</p>
+          <p
+          dangerouslySetInnerHTML={{
+            __html: DOMPurify.sanitize(post.desc),
+          }}
+        ></p>
         </div>
 
       </div>
